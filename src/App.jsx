@@ -4,6 +4,7 @@ import Login from "./pages/Login.jsx";
 import Signup from "./pages/Signup.jsx";
 import Dashboard from "./pages/Dashboard.jsx";
 import Navbar from "./components/Navbar.jsx";
+import NotesGrid from "./components/NotesGrid.jsx";
 
 const Layout = () => {
   return (
@@ -27,7 +28,11 @@ const router = createBrowserRouter([
   },
 ]);
 const App = () => {
-  return <RouterProvider router={router} />;
+  return (
+  <> 
+  <NotesGrid />
+   </>
+  )
 };
 
 export default App;
