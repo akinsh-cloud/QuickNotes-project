@@ -19,6 +19,16 @@ export default function AddNoteForm() {
 
    function handleSubmit(e){
     e.preventDefault();
+    if(!notes.title || !notes.tag || !notes.description){
+      alert("Please fill all the fields");
+      return;
+    }
+    
+     setNotes({
+      title: "",
+      tag: "",
+      description: "",
+    });
     console.log(notes);
    }
 
