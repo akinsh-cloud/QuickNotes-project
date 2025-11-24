@@ -1,7 +1,7 @@
 import React from 'react'
 import { useState } from 'react'
 
-export default function AddNoteForm() {
+export default function AddNoteForm({ onAddNote }) {
   
    const [notes, setNotes] = useState({
     title:"",
@@ -23,13 +23,12 @@ export default function AddNoteForm() {
       alert("Please fill all the fields");
       return;
     }
-    
      setNotes({
       title: "",
       tag: "",
       description: "",
     });
-    console.log(notes);
+    onAddNote(notes);
    }
 
 
