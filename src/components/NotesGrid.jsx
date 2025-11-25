@@ -1,7 +1,7 @@
 import React from 'react'
 import { useState } from 'react';
 
-export default function NotesGrid({ notes }){
+export default function NotesGrid({ notes, onDeleteNote }) {
   return (
     <div
       style={{
@@ -15,7 +15,7 @@ export default function NotesGrid({ notes }){
         <div
           key={idx}
           style={{
-            backgroundColor: "#597899ff",
+            backgroundColor: "#a7a5a5ff",
             color: "white",
             borderRadius: "10px",
             padding: "16px",
@@ -34,7 +34,7 @@ export default function NotesGrid({ notes }){
             <h3 style={{ margin: 0, fontSize: "20px", fontWeight: "600" }}>
               {note.title}
             </h3>
-
+        
             <span
               style={{
                 backgroundColor: "rgba(255,255,255,0.2)",
@@ -52,6 +52,28 @@ export default function NotesGrid({ notes }){
           <p style={{ margin: 0, fontSize: "15px", lineHeight: "1.4" }}>
             {note.description}
           </p>
+
+          <button style={{
+            marginTop: "15px",
+            padding: "8px 12px",
+            borderRadius: "6px",
+            border: "none",
+            backgroundColor: "#ff4d4d",
+            color: "white",
+            cursor: "pointer",
+          }} onClick={() => onDeleteNote(idx)}>Delete</button>
+
+          <button style={{
+            marginTop: "15px",
+            marginLeft: "10px",
+            padding: "8px 12px",
+            borderRadius: "6px",
+            border: "none",
+            backgroundColor: "#4CAF50",
+            color: "white",
+            cursor: "pointer",
+          }} onClick={()=> edit}>Edit</button>  
+
         </div>
       ))}
     </div>

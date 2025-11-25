@@ -10,11 +10,17 @@ export default function App() {
   setNotes([...notes, newNote]);
 }
 
+function DeleteNote(id) {
+  const updatedNotes = notes.filter((note, idx) => idx !== id);
+  setNotes(updatedNotes);
+};
+
+
     
   return (
     <div>
       <AddNoteForm onAddNote={handleAddNote}/>
-      <NotesGrid notes = {notes}/>
+      <NotesGrid notes = {notes} onDeleteNote={DeleteNote}/>
       
 
     </div>
